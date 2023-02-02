@@ -40,6 +40,7 @@ variable "custom_error_response" {
     response_page_path    = string
   }))
   description = "One or more custom error response elements (multiples allowed)"
+  default     = []
 }
 
 variable "default_ttl" {
