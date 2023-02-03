@@ -163,21 +163,21 @@ variable "origin" {
     connection_attempts = optional(number)
     connection_timeout  = optional(number)
     custom_header = optional(list(object({
-      name  = string
-      value = string
+      name  = optional(string)
+      value = optional(string)
     })))
     custom_origin_config = optional(object({
-      http_port                = number
-      https_port               = number
-      origin_protocol_policy   = string
-      origin_ssl_protocols     = string
+      http_port                = optional(number)
+      https_port               = optional(number)
+      origin_protocol_policy   = optional(string)
+      origin_ssl_protocols     = optional(string)
       origin_keepalive_timeout = optional(number)
       origin_read_timeout      = optional(number)
     }))
     origin_access_control_id = optional(string)
     origin_path              = optional(string)
     origin_shield = optional(object({
-      enabled              = bool
+      enabled              = optional(bool)
       origin_shield_region = optional(string)
     }))
     s3_origin_config = optional(object({
@@ -204,7 +204,7 @@ variable "origin_group" {
 variable "price_class" {
   type        = string
   description = "The price class for this distribution"
-  default     = ""
+  default     = "PriceClass_100"
 }
 
 variable "realtime_log_config_arn" {
