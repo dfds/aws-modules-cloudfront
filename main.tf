@@ -152,7 +152,7 @@ resource "aws_cloudfront_distribution" "this" {
       connection_timeout  = lookup(origin.value, "connection_timeout", null)
 
       dynamic "custom_header" {
-        for_each = lookup(origin.value, "custom_header", [])
+        for_each = length(lookup(origin.value, "custom_header")) != 0 ? [origin.value.custom_header] : []
 
         content {
           name  = custom_header.value.name
@@ -163,10 +163,10 @@ resource "aws_cloudfront_distribution" "this" {
         for_each = contains(keys(origin.value), "custom_origin_config") ? [lookup(origin.value, "custom_origin_config")] : []
 
         content {
-          http_port                = custom_origin_config.value.http_port
-          https_port               = custom_origin_config.value.https_port
-          origin_protocol_policy   = custom_origin_config.value.origin_protocol_policy
-          origin_ssl_protocols     = custom_origin_config.value.origin_ssl_protocols
+          http_port                = lookup(custom_origin_config.value, "http_port", null)
+          https_port               = lookup(custom_origin_config.value, "https_port", null)
+          origin_protocol_policy   = lookup(custom_origin_config.value, "origin_protocol_policy", "")
+          origin_ssl_protocols     = lookup(custom_origin_config.value, "origin_ssl_protocols", [])
           origin_keepalive_timeout = lookup(custom_origin_config.value, "origin_keepalive_timeout", null)
           origin_read_timeout      = lookup(custom_origin_config.value, "origin_read_timeout", null)
         }
