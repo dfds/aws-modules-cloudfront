@@ -67,5 +67,7 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_domain_name"></a> [domain\_name](#output\_domain\_name) | Domain name |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
