@@ -288,4 +288,5 @@ variable "wait_for_deployment" {
 variable "web_acl_id" {
   type        = string
   description = "A unique identifier that specifies the AWS WAF web ACL, if any, to associate with this distribution"
+  default     = ""
 }
