@@ -68,6 +68,7 @@ resource "aws_cloudfront_distribution" "this" {
 
   default_root_object = var.default_root_object
   enabled             = var.enabled
+  http_version        = var.http_version
   is_ipv6_enabled     = var.is_ipv6_enabled
 
   dynamic "logging_config" {
