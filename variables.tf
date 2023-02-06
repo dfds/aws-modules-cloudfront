@@ -235,7 +235,7 @@ variable "retain_on_delete" {
   default     = false
 }
 
-variable "cloudfront_tags" {
+variable "tags" {
   type        = object({})
   description = "Tags for the CloudFront distribution"
   default     = {}

@@ -234,5 +234,5 @@ resource "aws_cloudfront_distribution" "this" {
   retain_on_delete    = var.retain_on_delete
   wait_for_deployment = var.wait_for_deployment
 
-  tags = var.cloudfront_tags
+  tags = var.tags
 }
