@@ -1,7 +1,8 @@
 # aws-modules-cloudfront
 Module for AWS Cloudfront distribution
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+# Documentation
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
@@ -13,7 +14,7 @@ Module for AWS Cloudfront distribution
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.52.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.50.0 |
 
 ## Modules
 
@@ -70,4 +71,4 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_domain_name"></a> [domain\_name](#output\_domain\_name) | Domain name |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
