@@ -70,5 +70,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_cloudfront_arn"></a> [cloudfront\_arn](#output\_cloudfront\_arn) | ARN of the cloudfront distribution |
 | <a name="output_domain_name"></a> [domain\_name](#output\_domain\_name) | Domain name |
 <!-- END_TF_DOCS -->
