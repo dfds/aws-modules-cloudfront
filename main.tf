@@ -72,10 +72,10 @@ resource "aws_cloudfront_distribution" "this" {
   is_ipv6_enabled     = var.is_ipv6_enabled
 
   dynamic "logging_config" {
-    for_each = length(var.logging_config) != 0 ? [var.logging_config] : []
+    for_each = var.logging_config != 0 ? [var.logging_config] : []
 
     content {
-      bucket          = logging_config.value.bucket
+      bucket          = lookup(logging_config.value, "bucket", "")
       include_cookies = lookup(logging_config.value, "include_cookies", null)
       prefix          = lookup(logging_config.value, "prefix", "")
     }
