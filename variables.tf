@@ -137,7 +137,7 @@ variable "logging_config" {
   })
   description = "The logging configuration that controls how logs are written to your distribution (maximum one)"
   default = {
-    bucket = null
+    bucket = ""
   }
 }
 
