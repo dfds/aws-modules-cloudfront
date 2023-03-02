@@ -130,9 +130,15 @@ variable "lambda_function_association" {
 }
 
 variable "logging_config" {
-  type        = object({})
+  type = object({
+    bucket          = string
+    include_cookies = optional(bool)
+    prefix          = optional(string)
+  })
   description = "The logging configuration that controls how logs are written to your distribution (maximum one)"
-  default     = {}
+  default = {
+    bucket = null
+  }
 }
 
 variable "max_ttl" {
